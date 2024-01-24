@@ -71,8 +71,20 @@ if __name__ == '__main__':
     j_factory = JapaneseFactory()
     j_engine = j_factory.create_engine()
     j_car = j_factory.create_car()
+    print('j_engine', j_engine)
+    print('j_car', j_car)
+
+    r_factory = RussianFactory()
+    r_engine = r_factory.create_engine()
+    r_car = r_factory.create_car()
+
+    ch_factory = СhineseFactory()
+    ch_engine = ch_factory.create_engine()
+    ch_car = ch_factory.create_car()
 
     j_car.release_car(j_engine)
+    # r_car.release_car(r_engine)
+    # ch_car.release_car(ch_engine)
 
 
 
