@@ -46,17 +46,28 @@ class IphoneDeveloper(IDeveloper):
 class Director:
     def __init__(self, developer: IDeveloper):
         self.__developer = developer
-
     def set_developer(self, developer: IDeveloper):
         self.__developer = developer
-
-    def mount_only_phone(self):
+    def mount_only_phone(self) -> Phone:
         self.__developer.create_box()
         self.__developer.create_display()
         return self.__developer.get_phone()
-
-    def mount_full_phone(self):
+    def mount_full_phone(self) -> Phone:
         self.__developer.create_box()
         self.__developer.create_display()
         self.__developer.install_system()
         return self.__developer.get_phone()
+
+
+if __name__ == '__main__':
+
+    android_dev: IDeveloper = AndroidDeveloper()
+    director = Director(android_dev)
+    samsung: Phone = director.mount_full_phone()
+    print(samsung.about_phone())
+
+    iphone_dev: IDeveloper = IphoneDeveloper()
+    director.set_developer(iphone_dev)
+
+    iphone: Phone = director.mount_only_phone()
+    print(iphone.about_phone())
