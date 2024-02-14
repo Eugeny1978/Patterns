@@ -1,5 +1,7 @@
 import os
-path = 'C:\\Users\\Admin\\Desktop\\Скрины\\'
+path = 'C:\\Users\\Admin\\Desktop\\Скрины'
+slash = '\\'
+div_line = '-' * 120
 
 def bypass_dirs_flat(path: str, lst=[]):
     for elem in os.listdir(path):
@@ -10,23 +12,21 @@ def bypass_dirs_flat(path: str, lst=[]):
     return lst
 
 def bypass_dirs_levels(path: str, level=0):
-    # text = f" || {level = }"
-    # if len(multitude):
-    #     print(*multitude, text)
-    # else:
-    #     print('Пусто', text)
-    # for value in multitude:
-    #     if isinstance(value, (list, tuple, set)):
-    #         bypass_nested_lists(value, level=level + 1)
-    pass
-
+    dirs = os.listdir(path)
+    # folder = path.split(slash)[-1]
+    print(f'Folder: {path} ||', dirs, div_line, sep='\n')
+    for elem in dirs:
+        temp_path = f"{path}\\{elem}"
+        if os.path.isdir(temp_path):
+            bypass_dirs_levels(temp_path)
 
 
 if __name__ == '__main__':
 
-    # print(os.listdir(path))
+    print(bypass_dirs_flat(path), div_line, sep='\n')
 
-    print(bypass_dirs_flat(path))
+    bypass_dirs_levels(path)
+
 
 
 
