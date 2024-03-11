@@ -15,7 +15,7 @@ if __name__ == '__main__':
     # for i in indexes:
     #     df.loc[len(df)] = (10, 20, 30)
 
-    df.loc['free'] = (99, 199, 299)
+    df.loc['free'] = (99, 199, 299) # строка по метке
     df.loc['used'] = (1, 2, 3)
     df.loc['total'] = (100, 200, 300)
 
