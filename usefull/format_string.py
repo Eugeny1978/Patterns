@@ -1,10 +1,9 @@
+# В версиях Python до 3.6. Сейчас есть борлее популярный способ - f-строки
 
 name = 'Semen'
 mid_name = 'Semenovich'
 last_name = 'Gorbumkov'
 balance = 1256.76
-
-
 
 if __name__ == '__main__':
 
