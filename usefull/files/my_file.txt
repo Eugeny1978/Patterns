@@ -1,0 +1,7 @@
+First English string
+Вторая Русская Строка
+3 Строка
+Add 1 info by file.write
+Add 2 info by file.write
+Add 3 info by file.write
+Add 4 info by file.write
