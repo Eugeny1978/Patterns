@@ -19,7 +19,7 @@ def dprint(*args):
 #     print(symb)
 
 # Чтобы не происхожило такого ИНОГДА НЕЖЕЛАТЕЛЬНОГО Экранирования
-# Например, при ссылок на путь к файлам и папкам. Перд строкой необходимо добавить r:
+# Например, при ссылках на путь к файлам и папкам. Перед строкой необходимо добавить r:
 noncorrect_path = 'F:\new_music\tommorow'
 correct_path = r'F:\new_music\tommorow'
 dprint(f"{noncorrect_path = }", noncorrect_path, f"{len(noncorrect_path) = }")
